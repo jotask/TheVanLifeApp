@@ -9,6 +9,10 @@ import {
 import MapView from 'react-native-maps';
 class MapScreen extends Component {
 
+  static navigationOptions = {
+    header: null,
+  };
+
   render() {
      const { region } = this.props;
      console.log(region);

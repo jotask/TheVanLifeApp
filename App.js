@@ -5,7 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity
 } from "react-native";
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons';
 /**
  * createSwitchNavigator - Only Show ONE SCREEN/STACK at one time
  *  1. Loading Screen
@@ -51,18 +51,28 @@ const AppTabNavigator = createBottomTabNavigator({
   MapScreen: {
     screen: MapScreen,
     navigationOptions: {
-      tabBarLabel: 'MAP',
-      tabBarIcon: () => (
-        <Icon name="map-marker-alt" size={24} />
-      )
+      title: 'Map',
+      tabBarLabel: 'Map',
+      tabBarIcon: ({tintColor}) => (
+      <View style={{
+          height: 80,
+          width: 80,
+          borderRadius: 100,
+          backgroundColor: '#FE6D64',
+          alignItems: 'center',
+          justifyContent: 'center'
+          paddingTop: 15}}>
+        <Icon name="globe" type="font-awesome" size={45} color={tintColor}/>
+      </View>
+    )
     }
   },
   Settings: {
     screen: SettingsScreen,
     navigationOptions: {
-      tabBarLabel: 'SETTINGS',
+      tabBarLabel: 'Profile',
       tabBarIcon: () => (
-        <Icon name="ios-settings-outline" size={24} />
+        <Icon name="user" size={24} />
       )
     }
 
